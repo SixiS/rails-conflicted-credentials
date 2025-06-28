@@ -1,38 +1,72 @@
 # Rails::Conflicted::Credentials
 
-TODO: Delete this and the text below, and describe your gem
+A gem to help editing rails credentials files with git merge conflicts.
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/rails/conflicted/credentials`. To experiment with that code, run `bin/console` for an interactive prompt.
+## Pitch:
+
+Are your rails credentials stuck looking like:
+```
+<<<<<<< HEAD
+axssa4Lio6dTXKohAxnb9xGK47iD2tPguExc10WG--it7a+imKmhi2/oHn--SYem69mNPcb4PRLVghntzw==
+=======
+gg3TRVAh5NYnGx7Vwu8KpfmrspG75Oh0WSTFW9QC--3WhE+IKJeq4ZNPEv--BOT8y29V6OL9D8A4oN9FLg==
+>>>>>>> @{-1}
+```
+
+and you wish they could be edited like:
+```
+baz: foo
+<<<<<<< HEAD
+foo: bar
+=======
+foo: baz
+>>>>>>> @{-1}
+bar: baz
+```
+
+Then this is the gem for you!  
+Simply install the gem and use the new command `rails conflicted_credentials:edit`
 
 ## Installation
 
-TODO: Replace `UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG` with your gem name right after releasing it to RubyGems.org. Please do not do it earlier due to security reasons. Alternatively, replace this section with instructions to install your gem from git if you don't plan to release to RubyGems.org.
-
-Install the gem and add to the application's Gemfile by executing:
-
-```bash
-bundle add UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
+Add this line to your application's Gemfile:
+```ruby
+gem "rails-conflicted-credentials"
 ```
+And then execute:
 
-If bundler is not being used to manage dependencies, install the gem by executing:
+    $ bundle
 
-```bash
-gem install UPDATE_WITH_YOUR_GEM_NAME_IMMEDIATELY_AFTER_RELEASE_TO_RUBYGEMS_ORG
-```
+Or install it yourself as:
+
+    $ gem install rails-conflicted-credentials
 
 ## Usage
 
-TODO: Write usage instructions here
+This gem contains one new rails command:
+
+```bash
+rails conflicted_credentials:edit
+```
+
+It works with all the same options as `rails credentials:edit`.
+```bash
+Options:
+  -e, [--environment=ENVIRONMENT]  # The environment to run `credentials` in (e.g. test / development / production).
+```
+
+More info:
+```bash
+rails credentials:help
+```
 
 ## Development
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake test` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/rails-conflicted-credentials. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/rails-conflicted-credentials/blob/master/CODE_OF_CONDUCT.md).
+Bug reports and pull requests are welcome on GitHub at https://github.com/sixis/rails-conflicted-credentials. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/sixis/rails-conflicted-credentials/blob/master/CODE_OF_CONDUCT.md).
 
 ## License
 
@@ -40,4 +74,4 @@ The gem is available as open source under the terms of the [MIT License](https:/
 
 ## Code of Conduct
 
-Everyone interacting in the Rails::Conflicted::Credentials project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/[USERNAME]/rails-conflicted-credentials/blob/master/CODE_OF_CONDUCT.md).
+Everyone interacting in the Rails::Conflicted::Credentials project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the [code of conduct](https://github.com/sixis/rails-conflicted-credentials/blob/master/CODE_OF_CONDUCT.md).
