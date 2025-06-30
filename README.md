@@ -1,3 +1,5 @@
+[![CI](https://github.com/SixiS/rails-conflicted-credentials/actions/workflows/ci.yml/badge.svg)](https://github.com/SixiS/rails-conflicted-credentials/actions/workflows/ci.yml)
+
 # Rails::Conflicted::Credentials
 
 A gem to help editing rails credentials files with git merge conflicts.
