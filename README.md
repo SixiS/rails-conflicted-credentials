@@ -1,3 +1,4 @@
+[![Gem Version](https://badge.fury.io/rb/rails-conflicted-credentials.svg)](https://badge.fury.io/rb/rails-conflicted-credentials)
 [![CI](https://github.com/SixiS/rails-conflicted-credentials/actions/workflows/ci.yml/badge.svg)](https://github.com/SixiS/rails-conflicted-credentials/actions/workflows/ci.yml)
 
 # Rails::Conflicted::Credentials
