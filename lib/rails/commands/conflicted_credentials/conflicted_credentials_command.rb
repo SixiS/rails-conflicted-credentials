@@ -23,7 +23,7 @@ module Rails
           @key_path = "config/credentials/#{environment}.key" unless config.overridden?(:key_path)
         end
 
-        conflicted_credentials = ConflictedCredentials.new(@content_path, @key_path)
+        conflicted_credentials = ConflictedCredentials.new(content_path, key_path)
         conflicted_credentials.internalise_conflicts if conflicted_credentials.conflicts?
 
         ensure_encryption_key_has_been_added
