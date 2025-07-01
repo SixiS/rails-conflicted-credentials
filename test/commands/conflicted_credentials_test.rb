@@ -43,6 +43,24 @@ class Rails::Command::ConflictedCredentialsTest < ActiveSupport::TestCase
     assert_includes(run_edit_command(environment: "development"), decrypted_conflict.strip)
   end
 
+  test "edit command works with internal git conflicts" do
+    run_edit_command(environment: "development")
+
+    decrypted_conflict = <<~CONFLICT
+      baz: foo
+      <<<<<<< HEAD
+      foo: bar
+      =======
+      foo: baz
+      >>>>>>> @{-1}
+      bar: baz
+    CONFLICT
+
+    write_credentials decrypted_conflict, environment: "development"
+
+    assert_includes(run_edit_command(environment: "development"), decrypted_conflict.strip)
+  end
+
   private
     DEFAULT_CREDENTIALS_PATTERN = /access_key_id: 123\n.*secret_key_base: \h{128}\n/m
 

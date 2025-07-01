@@ -12,7 +12,7 @@ module Rails
       def edit
         begin
           load_environment_config!
-        rescue ActiveSupport::MessageEncryptor::InvalidMessage
+        rescue ActiveSupport::MessageEncryptor::InvalidMessage, ActiveSupport::EncryptedConfiguration::InvalidContentError
           # It's ok because they were conflicted
         end
 
