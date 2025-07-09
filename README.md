@@ -17,7 +17,7 @@ gg3TRVAh5NYnGx7Vwu8KpfmrspG75Oh0WSTFW9QC--3WhE+IKJeq4ZNPEv--BOT8y29V6OL9D8A4oN9F
 ```
 
 and you wish they could be edited like:
-```
+```yaml
 baz: foo
 <<<<<<< HEAD
 foo: bar
