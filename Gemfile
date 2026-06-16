@@ -21,6 +21,7 @@ end
 
 group :test do
   gem "minitest-retry"
+  gem "minitest-mock"
 
   gem "importmap-rails"
   gem "propshaft"
