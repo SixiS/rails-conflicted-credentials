@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+* Rails 8.1 appraisal [\#6](https://github.com/sixis/rails-conflicted-credentials/pull/7) ([SixiS](https://github.com/sixis))
+
 ## [0.1.4] - 2026-06-16
 
 * Fix tests on Ruby 4.0 and add CI for Ruby 4.0 [\#6](https://github.com/sixis/rails-conflicted-credentials/pull/6) ([SixiS](https://github.com/sixis))
