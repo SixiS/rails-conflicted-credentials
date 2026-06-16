@@ -10,17 +10,26 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - ruby: '3.4.4'
+            bundler: '2.6.9'
+          - ruby: '4.0.5'
+            bundler: 'latest'
+
+    name: Ruby ${{ matrix.ruby }}
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Ruby 3.4.4
+      - name: Set up Ruby ${{ matrix.ruby }}
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.4.4
-
-      - name: Install Bundler 2.6.9
-        run: gem install bundler -v 2.6.9
+          ruby-version: ${{ matrix.ruby }}
+          bundler: ${{ matrix.bundler }}
 
       - name: Bundle install
         run: bundle install --jobs 4 --retry 3
