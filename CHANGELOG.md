@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.1.4] - 2026-06-16
+
+* Fix tests on Ruby 4.0 and add CI for Ruby 4.0 [\#6](https://github.com/sixis/rails-conflicted-credentials/pull/6) ([SixiS](https://github.com/sixis))
+* Lazy load `Rails::Credentials::Command` so `anyway_config` can load credentials [\#5](https://github.com/sixis/rails-conflicted-credentials/pull/5) ([arthurthefourth](https://github.com/arthurthefourth))
 * Rails version appraisals [\#4](https://github.com/sixis/rails-conflicted-credentials/pull/4) ([SixiS](https://github.com/sixis))
 
 ## [0.1.3] - 2025-07-08
